@@ -49,15 +49,15 @@ void setup()
 
   Serial.print(F("Temperature offset is currently: "));
   Serial.println(mySensor.getTemperatureOffset(), 2); // Print the temperature offset with two decimal places
-  mySensor.setTemperatureOffset(5); // Set the temperature offset to 5C
+  mySensor.setTemperatureOffset(5.0); // Set the temperature offset to 5C
   Serial.print(F("Temperature offset is now: "));
   Serial.println(mySensor.getTemperatureOffset(), 2); // Print the temperature offset with two decimal places
 
   Serial.print(F("Sensor altitude is currently: "));
-  Serial.println(mySensor.getSensorAltitude(), 2); // Print the sensor altitude with two decimal places
-  mySensor.setSensorAltitude(1000); // Set the sensor altitude to 1000m
+  Serial.println(mySensor.getSensorAltitude(), DEC); // Print the sensor altitude with two decimal places
+  mySensor.setSensorAltitude(1609); // Set the sensor altitude to 1000m
   Serial.print(F("Sensor altitude is now: "));
-  Serial.println(mySensor.getSensorAltitude(), 2); // Print the sensor altitude with two decimal places
+  Serial.println(mySensor.getSensorAltitude(), DEC); // Print the sensor altitude with two decimal places
 
   //There is no getAmbientPressure command
   bool success = mySensor.setAmbientPressure(98700); // Set the ambient pressure to 98700 Pascals
